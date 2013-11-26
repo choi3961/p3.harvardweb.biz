@@ -18,12 +18,29 @@ var setting = new Array();
 var goal = null;
 var num = null;
 var score = 1;      //score to step down every click
-ready_to_start();
+var real_score = 0;
+
+//ready_to_start();
+
+before_ready();
+function before_ready(){
+	$("#display0").html("click Start to begin");
+	$(".guess_button").attr("disabled","disabled");
+}
 
 function ready_to_start() {
-	setting = game_sets.set2;
+	score = 1;
+	real_score = 100;
+	$(".righter").children().css("background-color","#FF7733");
+	//setting = game_sets.set2;
 	goal = setting[random(10)-1];
 	$("#display0").html("Look for "+goal);
+
+	$('#display2').html("");
+	$('#display3').html("");
+
+	$(".guess_button").removeAttr("disabled");
+	//$(".guess_button").attr("disabled","none");
 }
 
 function random(max){
@@ -31,69 +48,62 @@ function random(max){
 }
 
 function next_score(){
-	
-	if(score == 1){
-		$('.righter div:nth-child(1)').css("font-size","30px");
-	}
-	if(score == 2){
-		$('.righter div:nth-child(2)').css("font-size","30px");
-	}
-	if(score == 3){
-		$('.righter div:nth-child(3)').css("font-size","30px");
-	}
-	if(score ==4 ){
-		$('.righter div:nth-child(4)').css("font-size","30px");
-	}
-	if(score ==5 ){
-		$('.righter div:nth-child(5)').css("font-size","30px");
-	}
-	if(score ==6 ){
-		$('.righter div:nth-child(6)').css("font-size","30px");
-	}
-	if(score ==7 ){
-		$('.righter div:nth-child(7)').css("font-size","30px");
-	}
-	if(score ==8 ){
-		$('.righter div:nth-child(8)').css("font-size","30px");
-	}
-	if(score ==9 ){
-		$('.righter div:nth-child(9)').css("font-size","30px");
-	}
-	if(score == 10){
-		$('.righter div:nth-child(10)').css("font-size","30px");
-	}
-	
+
+          $(".righter div:nth-child("+score+")").css("background-color","red");
+ 
 }
 
-$("button").click(function(){
+$(".guess_button").click(function(){
 
+	console.log("hello777");
 	score++;
 
 	num = $(this).html();
 
 	if(setting[num]== goal){
 		$('#display2').html("You are right");
+		$('#display3').html("You got " + real_score);
+
+		before_ready();
+		//ready_to_start();
 	}
 	else{
 		$('#display2').html("You are wrong");
+		real_score = real_score - 10;
+		next_score();
 	}
 
-	//$('#50').css("color","blue");
-/////////////
-	//$('.righter div:nth-child(2)').css("font-size","30px");
-
-	//var temp = $('.righter div:nth-child(2)').html();
-	//$('#display3').html(temp);
-	//console.log("hello555");
-	//console.log(temp);
-///////////////
-	next_score();
-	$('#display3').html(score);
-	console.log(score);
-	
 });
 
 $('#start_button').click(function(){
 	ready_to_start();
-
 });
+
+$('#one').click(function(){
+	var mul = random(5);
+	for(temp = 0;temp<10; temp++){
+		setting[temp]=(temp+1)*mul;
+	}
+	$('#display3').html("one");
+	$('#display3').html(mul);
+});
+
+$('#two').click(function(){
+	var mul = random(10);
+
+	for(temp = 0;temp<10; temp++){
+		setting[temp]=(temp+1)*mul;
+	}
+	$('#display3').html(mul);
+});
+
+$('#three').click(function(){
+	var  mul = random(9);
+	var adding = random(10);
+	for(temp = 0;temp<10; temp++){
+		setting[temp]=(temp+1)*mul + adding;
+	}
+	$('#display3').html(mul);
+	$('#display11').html(adding);
+});
+

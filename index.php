@@ -10,26 +10,19 @@
 <body>
 	<div class = 'container'>
 		<div class = 'header'>
-			Guess Sooner!!
+			Guess Soon!!
 		</div>
 		<div class = 'lefter'>
-			<div id = 'score'>Level</div>
-			<div id = '100'>10</div>
-			<div id = '90'>9</div>
-			<div id = '80'>8</div>
-			<div id = '70'>7</div>
-			<div id = '60'>6</div>
-			<div id = '50'>5</div>
-			<div id = '40'>4</div>
-			<div id = '30'>3</div>
-			<div id = '20'>2</div>
-			<div id = '10'>1</div>
-			<div id = '0'>0</div>
+			<button class = 'level' id = ''>Level</button>
+			<button class = 'level'  id = 'five'>5</button>
+			<button class = 'level'  id = 'four'>4</button>
+			<button class = 'level'  id = 'three'>3</button>
+			<button class = 'level'  id = 'two'>2</button>
+			<button class = 'level'  id = 'one'>1</button>
 		</div>
 
 		<div class = 'center'>
 			<div id = 'game'>
-
 				<div id = 'display0'></div>
 				<div id = 'playbuttons'> 
 					<button class = 'guess_button'>0</button>
@@ -43,9 +36,19 @@
 					<button class = 'guess_button'>8</button>
 					<button class = 'guess_button'>9</button>
 				</div>
-				<div id = 'display'></div>
-				<div id = 'display2'></div>
-				<div id = 'display3'></div>
+				<div id = 'show_guess'>
+					<div class = 'guesses' id = 'guess0'></div>
+					<div class = 'guesses' id = 'guess1'></div>
+					<div class = 'guesses' id = 'guess2'></div>
+					
+				</div>
+
+				<div id = 'monitor'>
+					<div id = 'display'></div>
+					<div id = 'display2'></div>
+					<div id = 'display3'></div>
+				</div>
+					
 
 				<button id = 'start_button'>Start Over</button>
 
@@ -66,6 +69,7 @@
 			<div id = '10'>10</div>
 			<div id = '0'>0</div>
 			
+
 		</div>
 
 		<div class = 'footer'>

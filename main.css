@@ -4,69 +4,104 @@
 
 .container{
 	width: 900px;
-	background-color: green;
+	background-color: #FFCC66;
 	margin: auto;
 	border-style: inset;
 	border-width: 3px;
 	border-color: red;
 	position: relative;
-	height: 1100px;
+	height: 600px;
 }
 
 .header{
-	background-color: #bbff99;
-	height: 150px;
+	background-color: #FF9933;
+	height: 50px;
 	text-align: center;
-	font-size: 50px;
-	padding-top: 30px;
+	font-size: 40px;
+	padding-top: 0px;
 }
 
 .lefter{
-	background-color: gray;
+	background-color:#99CC00;
 	position: absolute;
 	left: 0;
 
-	height: 900px;
+	height: 450px;
 	width: 130px;
 	font-size: 50px;
 	text-align: center;
 
 }
 
+.level{
+	display: block;
+	width: 110px;
+	height: 50px;
+	margin: 10px auto;
+	font-size: 30px;
+}
+
 .center{
-	background-color: #aaaaff;
+	background-color: #F5E58E;
 	position: absolute;
 	left: 130px;
-	height: 900px;
+	height: 450px;
 	width: 700px;
 	float: left;
 }
 
-#display0{
-	font-size: 30px;
-	text-align: center;
-}
-
 #game{
-	width: 600px;
-	height: 600px;
-	background-color: blue;
+	width: 620px;
+	height: 430px;
+	background-color:#C7F04D;
 	position: absolute;
-	top: 50px;
-	left: 20px;
+	left: 10px;
+	top: 10px;
 }
 
 #playbuttons{
-	width:539px;
-	left: 30px;
-	top:100px;
-	margin: 50px auto;
+	width:550px;
+	margin: 20px auto;
 	background: #ffaaaa;
 
 }
 .guess_button{
 	width: 50px;
 	height: 50px;
+	left: 0px;
+}
+
+#show_guess{
+	width:550px;
+	margin: -10px auto;
+	background: #ffaaaa;
+
+}
+
+.guesses{
+	width: 50px;
+	height: 50px;
+	background-color: #DE7F2C;
+	display: inline-block;
+	//margin: auto;
+	left: 3px;
+	top: 1px;
+}
+
+#monitor{
+	width: 500px;
+	height: 100px;
+	background-color: #E85B46;
+	margin: 30px auto;
+}
+
+#display0{
+	width: 590px;
+	height: 50px;
+	background-color: #9ADE2C;
+	margin: 10px auto;
+	font-size: 35px;
+	text-align: center;
 }
 
 #display2{
@@ -74,21 +109,26 @@
 	text-align: center;
 }
 
+#display3{
+	font-size: 35px;
+	text-align: center;
+}
+
 #start_button{
 	text-align: center;
-	margin: 100px auto;
+	margin: 10px auto;
 	font-size: 30px;
 	display: block;
 }
 
 .righter{
-	background-color: red;
+	background-color: #FF7733;
 	width: 130px;
-	height:900px;
+	height: 450px;
 	position: absolute;
 	right: 0px;
 	text-align: center;
-	font-size: 50px;
+	font-size: 30px;
 }
 
 .footer{
