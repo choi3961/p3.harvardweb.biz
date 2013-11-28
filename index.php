@@ -13,7 +13,7 @@
 			Guess Soon!!
 		</div>
 		<div class = 'lefter'>
-			<button class = 'level' id = ''>Level</button>
+			<button class = 'level' id = 'levelh'>Level</button>
 			<button class = 'level'  id = 'five'>5</button>
 			<button class = 'level'  id = 'four'>4</button>
 			<button class = 'level'  id = 'three'>3</button>
@@ -24,7 +24,7 @@
 		<div class = 'center'>
 			<div id = 'game'>
 				<div id = 'display0'></div>
-				<div id = 'playbuttons'> 
+				<div id = 'button-container'> 
 					<button class = 'guess_button'>0</button>
 					<button class = 'guess_button'>1</button>
 					<button class = 'guess_button'>2</button>
@@ -35,21 +35,29 @@
 					<button class = 'guess_button'>7</button>
 					<button class = 'guess_button'>8</button>
 					<button class = 'guess_button'>9</button>
-				</div>
-				<div id = 'show_guess'>
-					<div class = 'guesses' id = 'guess0'></div>
-					<div class = 'guesses' id = 'guess1'></div>
-					<div class = 'guesses' id = 'guess2'></div>
-					
+					<button class = 'guess_button'>10</button>
+					<button class = 'guess_button'>11</button>
+					<button class = 'guess_button'>12</button>
+					<button class = 'guess_button'>13</button>
+					<button class = 'guess_button'>14</button>
+					<button class = 'guess_button'>15</button>
+					<button class = 'guess_button'>16</button>
+					<button class = 'guess_button'>17</button>
+					<button class = 'guess_button'>18</button>
+					<button class = 'guess_button'>19</button>
 				</div>
 
 				<div id = 'monitor'>
-					<div id = 'display'></div>
-					<div id = 'display2'></div>
-					<div id = 'display3'></div>
+					<div class = 'displays' id = 'display1'></div>
+					<div class = 'displays' id = 'display2'></div>
+					<div class = 'displays' id = 'display3'></div>
+					<div class = 'displays' id = 'display4'>
+						<audio controls>
+						  <source src="sound.wav" type="audio/wav">
+						</audio>
+					</div>
 				</div>
 					
-
 				<button id = 'start_button'>Start Over</button>
 
 			</div>
@@ -69,7 +77,6 @@
 			<div id = '10'>10</div>
 			<div id = '0'>0</div>
 			
-
 		</div>
 
 		<div class = 'footer'>

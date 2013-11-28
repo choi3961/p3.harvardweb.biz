@@ -47,7 +47,7 @@
 	left: 130px;
 	height: 450px;
 	width: 700px;
-	float: left;
+	//float: left;
 }
 
 #game{
@@ -59,8 +59,8 @@
 	top: 10px;
 }
 
-#playbuttons{
-	width:550px;
+#button-container{
+	width:540px;
 	margin: 20px auto;
 	background: #ffaaaa;
 
@@ -68,7 +68,7 @@
 .guess_button{
 	width: 50px;
 	height: 50px;
-	left: 0px;
+	left: 10px;
 }
 
 #show_guess{
@@ -91,7 +91,7 @@
 #monitor{
 	width: 500px;
 	height: 100px;
-	background-color: #E85B46;
+	//background-color: #E85B46;
 	margin: 30px auto;
 }
 
@@ -104,12 +104,21 @@
 	text-align: center;
 }
 
+#display1{
+	font-size: 20px;
+	text-align: center;
+}
+
 #display2{
-	font-size: 35px;
+	font-size: 30px;
 	text-align: center;
 }
 
 #display3{
+	font-size: 30px;
+	text-align: center;
+}
+#display4{
 	font-size: 35px;
 	text-align: center;
 }
