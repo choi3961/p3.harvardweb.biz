@@ -6,6 +6,7 @@ which matches with one suggested in the head board.
 <html>
 <head>
 	<title>Guess Soon!!</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" type="text/css" href="main.css">
 	<script src = 'jquery.js'></script>
 	<script src = 'jquery.js'></script>
@@ -47,7 +48,6 @@ which matches with one suggested in the head board.
 			<div id = 'game'>
 				<div id = 'display0'></div>
 				<div id = 'button-container'> 
-					<button class = 'guess_button'>0</button>
 					<button class = 'guess_button'>1</button>
 					<button class = 'guess_button'>2</button>
 					<button class = 'guess_button'>3</button>
@@ -67,17 +67,23 @@ which matches with one suggested in the head board.
 					<button class = 'guess_button'>17</button>
 					<button class = 'guess_button'>18</button>
 					<button class = 'guess_button'>19</button>
+					<button class = 'guess_button'>20</button>
+					<button class = 'guess_button'>21</button>
+					<button class = 'guess_button'>22</button>
+					<button class = 'guess_button'>23</button>
+					<button class = 'guess_button'>24</button>
+					<button class = 'guess_button'>25</button>
+					<button class = 'guess_button'>26</button>
+					<button class = 'guess_button'>27</button>
+					<button class = 'guess_button'>28</button>
+					<button class = 'guess_button'>29</button>
+					<button class = 'guess_button'>30</button>
 				</div>
 
 				<div id = 'monitor'>
 					<div class = 'displays' id = 'display1'></div>
 					<div class = 'displays' id = 'display2'></div>
 					<div class = 'displays' id = 'display3'></div>
-					<div class = 'displays' id = 'display4'>
-						<audio controls>
-						  <source src="sound.wav" type="audio/wav">
-						</audio>
-					</div>
 				</div>
 					
 				<button id = 'start_button'>Start Over</button>
@@ -89,18 +95,18 @@ which matches with one suggested in the head board.
 		This part shows the score decreasing along with the matching failed.
 		-->
 		<div class = 'righter'>
-			<div id = 'score'>score</div>
-			<div id = '100'>100</div>
-			<div id = '90'>90</div>
-			<div id = '80'>80</div>
-			<div id = '70'>70</div>
-			<div id = '60'>60</div>
-			<div id = '50'>50</div>
-			<div id = '40'>40</div>
-			<div id = '30'>30</div>
-			<div id = '20'>20</div>
-			<div id = '10'>10</div>
-			<div id = '0'>0</div>
+			<div id = 'score-head'>SCORE</div>
+			<div class = 'score' id = '100'>100</div>
+			<div class = 'score' id = '90'>90</div>
+			<div class = 'score' id = '80'>80</div>
+			<div class = 'score' id = '70'>70</div>
+			<div class = 'score' id = '60'>60</div>
+			<div class = 'score' id = '50'>50</div>
+			<div class = 'score' id = '40'>40</div>
+			<div class = 'score' id = '30'>30</div>
+			<div class = 'score' id = '20'>20</div>
+			<div class = 'score' id = '10'>10</div>
+			<div class = 'score' id = '0'>0</div>
 		</div>
 
 		<!--
@@ -109,7 +115,7 @@ which matches with one suggested in the head board.
 		<div class = 'footer'>
 			<div class = 'subfooter'>
 				<span>About the game :</span> 
-				This is the game which you find the number in the sequence
+				This is the game in which you find the number in the sequence
 				 that has a pattern. Level 1, 2, and 3 have a pattern 
 				 of linear function in math. Level 4 has of quadratic function. 
 				 And level 5 has of cubic function.

@@ -8,7 +8,6 @@ var goal = null;				// The number to be matched in the game.
 var num = null;					// The numbers the array would have.
 var scoreboard = 1;      		//score to step down every click
 var real_score = 0;				// The score the player could get.
-//var choice = null;
 
 start();						// Initializes the game.
 
@@ -20,8 +19,7 @@ function start(){
 	$('#display0').html("Select Level");
 	$(".guess_button").attr("disabled","disabled");
 	$("#start_button").attr("disabled","disabled");
-	$(".righter").children().css("background-color","#F2C718");
-	//$('#start_button').disabled();
+	$(".score").css("background-color","#F2C718");
 }
 
 /*
@@ -29,7 +27,7 @@ The player could click the 'Start Over' button to begin the game
 in this state.
 */
 function before_ready(){
-	$(".righter").children().css("background-color","#F2C718");
+	$(".score").css("background-color","#F2C718");
 	$(".guess_button").attr("disabled","disabled");
 	$('.guesses').html("");
 	$('.displays').html("");
@@ -43,8 +41,8 @@ the game.
 function ready_to_start() {
 	scoreboard = 1;
 	real_score = 100;
-	$(".righter").children().css("background-color","#F2C718");
-	goal = setting[random(20)-1];					// Array to contain random numbers.
+	$(".score").css("background-color","#F2C718");
+	goal = setting[random(30)-1];					// Array to contain random numbers.
 	$("#display0").html("Look for "+goal);
 	$('#display2').html("");
 	$(".guess_button").removeAttr("disabled");
@@ -71,25 +69,32 @@ It judges if the player clicked the number which matches with the number suggest
 */
 $(".guess_button").click(function(){
 
-	scoreboard++;
-
-	num = $(this).html();
-
-	choice = eval(num) +1 ;
-
-	// If matched, it shows the score and returns to the start state.
-	if(setting[num]== goal){
-
-		$('#display2').html("You picked up " + setting[num] + ",  right!!");
-		$('#display3').html("Score " + real_score);
+	if(real_score == 0){
 		start();
+		$('#display2').html("You lost the game?!");
+		$('#display3').html("Score 0");
 	}
-	
-	// If not matched, the player could click another button to find the number.
 	else{
-		$('#display2').html("You picked up " + setting[num] +  ",  wrong!!");
-		real_score = real_score - 10;
-		next_score();
+
+		scoreboard++;
+
+		num = $(this).html();
+
+		
+		// If matched, it shows the score and returns to the start state.
+		if(setting[num-1]== goal){
+
+			$('#display2').html("You picked up " + setting[num-1] + ",  right!!");
+			$('#display3').html("Score " + real_score);
+			start();
+		}
+		
+		// If not matched, the player could click another button to find the number.
+		else{
+			$('#display2').html("You picked up " + setting[num-1] +  ",  wrong!!");
+			real_score = real_score - 10;
+			next_score();
+		}
 	}
 });
 
@@ -99,7 +104,6 @@ It returns to the state of ready_to_start in the game.
 $('#start_button').click(function(){
 	ready_to_start();
 });
-
 
 /*
 This suggests the state of before_ready in the game for the player to 
@@ -123,8 +127,8 @@ Arrays the numbers into 20.
 */
 $('#one').click(function(){
 	var mul = random(10);
-	for(temp = 0;temp<20; temp++){
-		setting[temp]=(temp+1)*mul;
+	for(temp = 0;temp<30; temp++){
+		setting[temp]=(temp)*mul;
 	}
 	$('#display0').html("Level 1");
 });
@@ -137,8 +141,8 @@ $('#two').click(function(){
 	var mul = random(30);
 	var adding = random(20);
 
-	for(temp = 0;temp<20; temp++){
-		setting[temp]=(temp+1)*mul + adding;
+	for(temp = 0;temp<30; temp++){
+		setting[temp]=(temp)*mul + adding;
 	}
 	$('#display0').html("Level 2");
 	
@@ -157,19 +161,19 @@ $('#three').click(function(){
 
 	// Ordinary order
 	if(sel == 1){
-		for(temp = 0;temp<20; temp++){
-			setting[temp]=((temp+1)-one)*two;
+		for(temp = 0;temp<30; temp++){
+			setting[temp]=((temp)-one)*two;
 		}
 	}
 
 	// reversed order
 	else{
-		for(temp = 0;temp<20; temp++){
-			settingtem[temp]=((temp+1)-one)*two;
+		for(temp = 0;temp<30; temp++){
+			settingtem[temp]=((temp)-one)*two;
 		}
 
 		// reverse the sequence of the numbers
-		for(temp = 19;temp>=0; temp--){
+		for(temp = 29;temp>=0; temp--){
 			setting[temp2]=settingtem[temp];
 			temp2++;
 		}
@@ -191,19 +195,19 @@ $('#four').click(function(){
 
 	// Ordinary order
 	if(sel == 1){
-		for(temp = 0;temp<20; temp++){
-			setting[temp]=((temp+1)-one)*((temp+1)-two);
+		for(temp = 0;temp<30; temp++){
+			setting[temp]=((temp)-one)*((temp+1)-two);
 		}
 	}
 
 	// reversed order
 	else{
-		for(temp = 0;temp<20; temp++){
-			settingtem[temp]=((temp+1)-one)*((temp+1)-two);
+		for(temp = 0;temp<30; temp++){
+			settingtem[temp]=((temp)-one)*((temp+1)-two);
 		}
 
 		// reverse the sequence of the numbers
-		for(temp = 19;temp>=0; temp--){
+		for(temp = 29;temp>=0; temp--){
 			setting[temp2]=settingtem[temp];
 			temp2++;
 		}
@@ -226,18 +230,18 @@ $('#five').click(function(){
 
 	// Ordinary order
 	if(sel == 1){
-		for(temp = 0;temp<20; temp++){
-			setting[temp]=((temp+1)-one)*((temp+1)-two)*((temp+1)-three);
+		for(temp = 0;temp<30; temp++){
+			setting[temp]=((temp)-one)*((temp)-two)*((temp)-three);
 		}
 	}
 	// reversed order
 	else{
-		for(temp = 0;temp<20; temp++){
-			settingtem[temp]=((temp+1)-one)*((temp+1)-two)*((temp+1)-three);
+		for(temp = 0;temp<30; temp++){
+			settingtem[temp]=((temp)-one)*((temp)-two)*((temp)-three);
 		}
 
 		// reverse the sequence of the numbers
-		for(temp = 19;temp>=0; temp--){
+		for(temp = 29;temp>=0; temp--){
 			setting[temp2]=settingtem[temp];
 			temp2++;
 		}
@@ -246,12 +250,3 @@ $('#five').click(function(){
 	$('#display0').html("Level 5");
 	//before_ready();
 });
-
-/**********************************
-<script language="javascript" type="text/javascript">
- function playSound(soundfile) {
- document.getElementById("dummy").innerHTML=
- "<embed src=\""+soundfile+"\" hidden=\"true\" autostart=\"true\" loop=\"false\" />";
- }
- </script>
- *******************************/

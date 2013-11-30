@@ -33,7 +33,7 @@ This is for the left part of the page.
 .lefter{
 	background-color:#99CC00;
 	position: absolute;
-	left: 0;
+	left: 0px;
 
 	height: 450px;
 	width: 130px;
@@ -62,7 +62,6 @@ This styles the center of the page.
 	left: 130px;
 	height: 450px;
 	width: 700px;
-	//float: left;
 }
 
 /*
@@ -81,9 +80,9 @@ This is for the game board in the center of the page.
 This is for the buttons of the page.
 */
 #button-container{
-	width:540px;
+	width:545px;
 	margin: 20px auto;
-	background: #ffaaaa;
+	background-color: #ffaaaa;
 
 }
 
@@ -93,7 +92,6 @@ This is for the game buttons of the page.
 .guess_button{
 	width: 50px;
 	height: 50px;
-	left: 10px;
 }
 
 
@@ -102,8 +100,7 @@ This is for the display of the result of the game.
 */
 #monitor{
 	width: 500px;
-	height: 100px;
-	//background-color: #E85B46;
+	height: 80px;
 	margin: 30px auto;
 }
 
@@ -144,14 +141,6 @@ This is for the display of the result of the game.
 }
 
 /*
-This is for the display of the result of the game.
-*/
-#display4{
-	font-size: 35px;
-	text-align: center;
-}
-
-/*
 This styles the 'Start Over' button in the game page.
 */
 #start_button{
@@ -174,6 +163,9 @@ This is for the right part of the page.
 	font-size: 30px;
 }
 
+#score-head{
+	background-color: #EB7E36;
+}
 /*
 This is for the bottom part of the page.
 */
@@ -183,6 +175,7 @@ This is for the bottom part of the page.
 	width: 900px;
 	position: absolute;
 	bottom: 0;
+	font-family:Arial,Helvetica,sans-serif;
 }
 
 /*
@@ -191,8 +184,6 @@ This is for the subpart of the bottom of page.
 .subfooter{
 	float:left;
 	width:439px;
-	//padding: 5px;
-	background-color: #ABF095;
 	margin: 5px;
 	font-size: 17px;
 }
