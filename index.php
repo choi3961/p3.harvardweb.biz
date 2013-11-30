@@ -1,17 +1,34 @@
 <!DOCTYPE html>
+<!--
+This is the simple web application game in which you find the number 
+which matches with one suggested in the head board.
+-->
 <html>
 <head>
+	<title>Guess Soon!!</title>
 	<link rel="stylesheet" type="text/css" href="main.css">
 	<script src = 'jquery.js'></script>
 	<script src = 'jquery.js'></script>
 	<script src = 'guess.js'></script>
-
 </head>
+
 <body>
+	<!--
+	All the content in the page are included in this part.
+	It contains head part, left part, center part, right part and bottom part.
+	-->
 	<div class = 'container'>
+
+		<!--
+		This is head part of the page. It presents the name of the game.
+		-->
 		<div class = 'header'>
 			Guess Soon!!
 		</div>
+
+		<!--
+		This part presents the interface of selecting the level of the game.
+		-->
 		<div class = 'lefter'>
 			<button class = 'level' id = 'levelh'>Level</button>
 			<button class = 'level'  id = 'five'>5</button>
@@ -21,6 +38,11 @@
 			<button class = 'level'  id = 'one'>1</button>
 		</div>
 
+		<!--
+		This is the place where the player plays game.
+		This part shows the situation of the game. It presents what to do.
+		It also presents the result of the game.
+		-->
 		<div class = 'center'>
 			<div id = 'game'>
 				<div id = 'display0'></div>
@@ -62,7 +84,10 @@
 
 			</div>
 		</div>
-		
+
+		<!--
+		This part shows the score decreasing along with the matching failed.
+		-->
 		<div class = 'righter'>
 			<div id = 'score'>score</div>
 			<div id = '100'>100</div>
@@ -76,16 +101,33 @@
 			<div id = '20'>20</div>
 			<div id = '10'>10</div>
 			<div id = '0'>0</div>
-			
 		</div>
 
+		<!--
+		This bottom part of the web page explains of the game and how to play.
+		-->
 		<div class = 'footer'>
-		</div>
+			<div class = 'subfooter'>
+				<span>About the game :</span> 
+				This is the game which you find the number in the sequence
+				 that has a pattern. Level 1, 2, and 3 have a pattern 
+				 of linear function in math. Level 4 has of quadratic function. 
+				 And level 5 has of cubic function.
+			</div>
 
-		<div>
+			<div class = 'subfooter'>
+				<span>How to play :</span> First, select the level of the game 
+				in the left board. Secondly, click the 'Start Over' button, 
+				and then you click the number in the center board to match 
+				with the number in the header.
+			</div>
 		</div>
 	</div>
 
+	<!-- 
+	This is the core part of the game which controls the game dynamically
+	along with the user event.
+	-->
 	<script src = 'guess.js'></script>
 
 </body>

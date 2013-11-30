@@ -1,7 +1,10 @@
-#menu{
-	
-}
+/*
+This document is dedicated to style the index.html which is a web pplication game.
+*/
 
+/*
+This style shows the whole design of the page.
+*/
 .container{
 	width: 900px;
 	background-color: #FFCC66;
@@ -13,6 +16,9 @@
 	height: 600px;
 }
 
+/*
+This shows the style of head part of the web page.
+*/
 .header{
 	background-color: #FF9933;
 	height: 50px;
@@ -21,6 +27,9 @@
 	padding-top: 0px;
 }
 
+/*
+This is for the left part of the page.
+*/
 .lefter{
 	background-color:#99CC00;
 	position: absolute;
@@ -33,6 +42,9 @@
 
 }
 
+/*
+This is for the buttons of the page.
+*/
 .level{
 	display: block;
 	width: 110px;
@@ -41,6 +53,9 @@
 	font-size: 30px;
 }
 
+/*
+This styles the center of the page.
+*/
 .center{
 	background-color: #F5E58E;
 	position: absolute;
@@ -50,6 +65,9 @@
 	//float: left;
 }
 
+/*
+This is for the game board in the center of the page.
+*/
 #game{
 	width: 620px;
 	height: 430px;
@@ -59,35 +77,29 @@
 	top: 10px;
 }
 
+/*
+This is for the buttons of the page.
+*/
 #button-container{
 	width:540px;
 	margin: 20px auto;
 	background: #ffaaaa;
 
 }
+
+/*
+This is for the game buttons of the page.
+*/
 .guess_button{
 	width: 50px;
 	height: 50px;
 	left: 10px;
 }
 
-#show_guess{
-	width:550px;
-	margin: -10px auto;
-	background: #ffaaaa;
 
-}
-
-.guesses{
-	width: 50px;
-	height: 50px;
-	background-color: #DE7F2C;
-	display: inline-block;
-	//margin: auto;
-	left: 3px;
-	top: 1px;
-}
-
+/*
+This is for the display of the result of the game.
+*/
 #monitor{
 	width: 500px;
 	height: 100px;
@@ -95,6 +107,9 @@
 	margin: 30px auto;
 }
 
+/*
+This is for the display of the head in the game.
+*/
 #display0{
 	width: 590px;
 	height: 50px;
@@ -104,25 +119,41 @@
 	text-align: center;
 }
 
+/*
+This is for the display of the result of the game.
+*/
 #display1{
 	font-size: 20px;
 	text-align: center;
 }
 
+/*
+This is for the display of the result of the game.
+*/
 #display2{
 	font-size: 30px;
 	text-align: center;
 }
 
+/*
+This is for the display of the result of the game.
+*/
 #display3{
 	font-size: 30px;
 	text-align: center;
 }
+
+/*
+This is for the display of the result of the game.
+*/
 #display4{
 	font-size: 35px;
 	text-align: center;
 }
 
+/*
+This styles the 'Start Over' button in the game page.
+*/
 #start_button{
 	text-align: center;
 	margin: 10px auto;
@@ -130,8 +161,11 @@
 	display: block;
 }
 
+/*
+This is for the right part of the page.
+*/
 .righter{
-	background-color: #FF7733;
+	background-color: #F2C718;
 	width: 130px;
 	height: 450px;
 	position: absolute;
@@ -140,12 +174,30 @@
 	font-size: 30px;
 }
 
+/*
+This is for the bottom part of the page.
+*/
 .footer{
-	background-color:green;
+	background-color: #49C91E;
 	height: 100px;
 	width: 900px;
 	position: absolute;
 	bottom: 0;
 }
 
+/*
+This is for the subpart of the bottom of page.
+*/
+.subfooter{
+	float:left;
+	width:439px;
+	//padding: 5px;
+	background-color: #ABF095;
+	margin: 5px;
+	font-size: 17px;
+}
+
+.subfooter span{
+	font-weight: bold;
+}
 

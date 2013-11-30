@@ -1,52 +1,74 @@
+/*
+This application is for the index.php which runs a simple game nemed 'Guess Soon!!'
+This is the core part of the web application which responds to the user event.
+*/
+var setting = new Array();		// The array to contain the numbers to be guessed.
+var settingtem = new Array();	// Ths array to contain the numbers to be reversed for the array setting.
+var goal = null;				// The number to be matched in the game.
+var num = null;					// The numbers the array would have.
+var scoreboard = 1;      		//score to step down every click
+var real_score = 0;				// The score the player could get.
+//var choice = null;
 
-var setting = new Array();
-var settingtem = new Array();
-var goal = null;
-var num = null;
-var scoreboard = 1;      //score to step down every click
-var real_score = 0;
-var choice = null;
+start();						// Initializes the game.
 
-start();
-
+/*
+Initializes the application. The player could select the level of the game.
+Other buttons are disabled.
+*/
 function start(){
 	$('#display0').html("Select Level");
 	$(".guess_button").attr("disabled","disabled");
 	$("#start_button").attr("disabled","disabled");
+	$(".righter").children().css("background-color","#F2C718");
 	//$('#start_button').disabled();
 }
+
+/*
+The player could click the 'Start Over' button to begin the game 
+in this state.
+*/
 function before_ready(){
-	
+	$(".righter").children().css("background-color","#F2C718");
 	$(".guess_button").attr("disabled","disabled");
 	$('.guesses').html("");
 	$('.displays').html("");
 }
 
+/*
+This is the state the player could play the game after 'Start Over' 
+button clicked. By clicking the buttons of numbers the player runs 
+the game.
+*/
 function ready_to_start() {
 	scoreboard = 1;
 	real_score = 100;
-	$(".righter").children().css("background-color","#FF7733");
-	//setting = game_sets.set2;
-	goal = setting[random(10)-1];
+	$(".righter").children().css("background-color","#F2C718");
+	goal = setting[random(20)-1];					// Array to contain random numbers.
 	$("#display0").html("Look for "+goal);
-
-	$('.guesses').html("");
-	$('#displays').html("");
-
+	$('#display2').html("");
 	$(".guess_button").removeAttr("disabled");
-	//$(".guess_button").attr("disabled","none");
 }
 
+/*
+This is the function to produce a random number for the game.
+*/
 function random(max){
 	return Math.floor((Math.random()*max)+1)
 }
 
+/*
+This shows the score the player could get along with the clicking the guess-buttons.
+*/
 function next_score(){
 
           $(".righter div:nth-child("+scoreboard+")").css("background-color","red");
- 
 }
 
+/*
+This is the event listener which the player clicks the buttons against.
+It judges if the player clicked the number which matches with the number suggested in the head part.
+*/
 $(".guess_button").click(function(){
 
 	scoreboard++;
@@ -55,23 +77,15 @@ $(".guess_button").click(function(){
 
 	choice = eval(num) +1 ;
 
-	//$('#show_guess div:nth-child('+choice+')').html(setting[num]);
-
+	// If matched, it shows the score and returns to the start state.
 	if(setting[num]== goal){
 
 		$('#display2').html("You picked up " + setting[num] + ",  right!!");
-		$('#display3').html("You score " + real_score);
-
-
-		//for(num = 0;num<10;num++){
-		//	$('#display1').html(setting[num] + ", ");
-		//}
-		
-
+		$('#display3').html("Score " + real_score);
 		start();
-		//before_ready();
-		//ready_to_start();
 	}
+	
+	// If not matched, the player could click another button to find the number.
 	else{
 		$('#display2').html("You picked up " + setting[num] +  ",  wrong!!");
 		real_score = real_score - 10;
@@ -79,20 +93,34 @@ $(".guess_button").click(function(){
 	}
 });
 
+/*
+It returns to the state of ready_to_start in the game.
+*/
 $('#start_button').click(function(){
 	ready_to_start();
 });
 
 
+/*
+This suggests the state of before_ready in the game for the player to 
+click 'Start Over' button.
+*/
 $('.level').click(function(){
 	$('#start_button').removeAttr('disabled');  //start_button enabled
 	before_ready();
 });
 
+/*
+Initializes the game to the state of the start.
+*/
 $('#levelh').click(function(){
 	start();
 });
 
+/*
+Determines the level of the game into level 1.
+Arrays the numbers into 20.
+*/
 $('#one').click(function(){
 	var mul = random(10);
 	for(temp = 0;temp<20; temp++){
@@ -101,6 +129,10 @@ $('#one').click(function(){
 	$('#display0').html("Level 1");
 });
 
+/*
+Determines the level of the game into level 2.
+Arrays the numbers into 20 with wider arrange.
+*/
 $('#two').click(function(){
 	var mul = random(30);
 	var adding = random(20);
@@ -112,6 +144,10 @@ $('#two').click(function(){
 	
 });
 
+/*
+Determines the level of the game into level 3.
+Arrays the numbers into 20. The order could randomly be reversed .
+*/
 $('#three').click(function(){
 	var one = random(20);
 	var two = random(20);
@@ -119,29 +155,33 @@ $('#three').click(function(){
 
 	var sel = random(2);
 
+	// Ordinary order
 	if(sel == 1){
 		for(temp = 0;temp<20; temp++){
 			setting[temp]=((temp+1)-one)*two;
 		}
 	}
 
+	// reversed order
 	else{
 		for(temp = 0;temp<20; temp++){
 			settingtem[temp]=((temp+1)-one)*two;
 		}
 
 		// reverse the sequence of the numbers
-		for(temp = 9;temp>=0; temp--){
+		for(temp = 19;temp>=0; temp--){
 			setting[temp2]=settingtem[temp];
 			temp2++;
 		}
-
 	}
 
 	$('#display0').html("Level 3");
-	//before_ready();
 });
 
+/*
+Determines the level of the game into level 4.
+Arrays the numbers into 20. The order could randomly be reversed .
+*/
 $('#four').click(function(){
 	var one = random(20);
 	var two = random(20);
@@ -149,29 +189,33 @@ $('#four').click(function(){
 
 	var sel = random(2);
 
+	// Ordinary order
 	if(sel == 1){
 		for(temp = 0;temp<20; temp++){
 			setting[temp]=((temp+1)-one)*((temp+1)-two);
 		}
 	}
 
+	// reversed order
 	else{
 		for(temp = 0;temp<20; temp++){
 			settingtem[temp]=((temp+1)-one)*((temp+1)-two);
 		}
 
 		// reverse the sequence of the numbers
-		for(temp = 9;temp>=0; temp--){
+		for(temp = 19;temp>=0; temp--){
 			setting[temp2]=settingtem[temp];
 			temp2++;
 		}
-
 	}
 
 	$('#display0').html("Level 4");
-	//before_ready();
 });
 
+/*
+Determines the level of the game into level 5.
+Arrays the numbers into 20. The order could randomly be reversed .
+*/
 $('#five').click(function(){
 	var one = random(20);
 	var two = random(20);
@@ -180,24 +224,23 @@ $('#five').click(function(){
 
 	var sel = random(2);
 
-
+	// Ordinary order
 	if(sel == 1){
 		for(temp = 0;temp<20; temp++){
 			setting[temp]=((temp+1)-one)*((temp+1)-two)*((temp+1)-three);
 		}
 	}
-
+	// reversed order
 	else{
 		for(temp = 0;temp<20; temp++){
 			settingtem[temp]=((temp+1)-one)*((temp+1)-two)*((temp+1)-three);
 		}
 
 		// reverse the sequence of the numbers
-		for(temp = 9;temp>=0; temp--){
+		for(temp = 19;temp>=0; temp--){
 			setting[temp2]=settingtem[temp];
 			temp2++;
 		}
-
 	}
 
 	$('#display0').html("Level 5");
