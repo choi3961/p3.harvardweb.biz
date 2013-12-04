@@ -48,36 +48,38 @@ which matches with one suggested in the head board.
 			<div id = 'game'>
 				<div id = 'display0'></div>
 				<div id = 'button-container'> 
-					<button class = 'guess_button'>1</button>
-					<button class = 'guess_button'>2</button>
-					<button class = 'guess_button'>3</button>
-					<button class = 'guess_button'>4</button>
-					<button class = 'guess_button'>5</button>
-					<button class = 'guess_button'>6</button>
-					<button class = 'guess_button'>7</button>
-					<button class = 'guess_button'>8</button>
-					<button class = 'guess_button'>9</button>
-					<button class = 'guess_button'>10</button>
-					<button class = 'guess_button'>11</button>
-					<button class = 'guess_button'>12</button>
-					<button class = 'guess_button'>13</button>
-					<button class = 'guess_button'>14</button>
-					<button class = 'guess_button'>15</button>
-					<button class = 'guess_button'>16</button>
-					<button class = 'guess_button'>17</button>
-					<button class = 'guess_button'>18</button>
-					<button class = 'guess_button'>19</button>
-					<button class = 'guess_button'>20</button>
-					<button class = 'guess_button'>21</button>
-					<button class = 'guess_button'>22</button>
-					<button class = 'guess_button'>23</button>
-					<button class = 'guess_button'>24</button>
-					<button class = 'guess_button'>25</button>
-					<button class = 'guess_button'>26</button>
-					<button class = 'guess_button'>27</button>
-					<button class = 'guess_button'>28</button>
-					<button class = 'guess_button'>29</button>
-					<button class = 'guess_button'>30</button>
+					<div id = 'button-plate'>
+						<button class = 'guess_button'>1</button>
+						<button class = 'guess_button'>2</button>
+						<button class = 'guess_button'>3</button>
+						<button class = 'guess_button'>4</button>
+						<button class = 'guess_button'>5</button>
+						<button class = 'guess_button'>6</button>
+						<button class = 'guess_button'>7</button>
+						<button class = 'guess_button'>8</button>
+						<button class = 'guess_button'>9</button>
+						<button class = 'guess_button'>10</button>
+						<button class = 'guess_button'>11</button>
+						<button class = 'guess_button'>12</button>
+						<button class = 'guess_button'>13</button>
+						<button class = 'guess_button'>14</button>
+						<button class = 'guess_button'>15</button>
+						<button class = 'guess_button'>16</button>
+						<button class = 'guess_button'>17</button>
+						<button class = 'guess_button'>18</button>
+						<button class = 'guess_button'>19</button>
+						<button class = 'guess_button'>20</button>
+						<button class = 'guess_button'>21</button>
+						<button class = 'guess_button'>22</button>
+						<button class = 'guess_button'>23</button>
+						<button class = 'guess_button'>24</button>
+						<button class = 'guess_button'>25</button>
+						<button class = 'guess_button'>26</button>
+						<button class = 'guess_button'>27</button>
+						<button class = 'guess_button'>28</button>
+						<button class = 'guess_button'>29</button>
+						<button class = 'guess_button'>30</button>
+					</div>
 				</div>
 
 				<div id = 'monitor'>
@@ -115,10 +117,11 @@ which matches with one suggested in the head board.
 		<div class = 'footer'>
 			<div class = 'subfooter'>
 				<span>About the game :</span> 
-				This is the game in which you find the number in the sequence
-				 that has a pattern. Level 1, 2, and 3 have a pattern 
-				 of linear function in math. Level 4 has of quadratic function. 
-				 And level 5 has of cubic function.
+				This is the game in which you find the number that matches 
+				with the number on the header panel in the sequence of 30 numbers. 
+				Level 1, 2, and 3 have a pattern of linear function in math. 
+				Level 4 has of quadratic function. And level 5 has of cubic 
+				function.
 			</div>
 
 			<div class = 'subfooter'>
